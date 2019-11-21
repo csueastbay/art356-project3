@@ -8,6 +8,7 @@ var apiKey= '&appid=30fca972f2c59b104e617b40bc0c5702'
 var units = '&units=imperial';
 var data1,data2,data3,data4,data5;
 let thermometer,winds,clouds;
+let forecast = "";
 
 
 var input;
@@ -22,6 +23,10 @@ var button= select('#submit');
 button.mousePressed(weatherAsk);
 //give variable input the value of any api city id
   input = select('#city')
+
+
+//forecast = url.weather[0].description;
+
   }
 
 function weatherAsk ()
@@ -29,6 +34,7 @@ function weatherAsk ()
   //url value equals to the url setup
   var url = api + input.value() + apiKey + units;
   loadJSON(url,gotData);
+  //forecast = url.weather[].description;
 }
 
 
@@ -37,8 +43,8 @@ function weatherAsk ()
  {
    //give weather function the value of data
    weather = data;
-
-
+//parse weather forecast description from live url
+forecast = weather.weather[0].description;
  }
 function draw()
 {
@@ -57,13 +63,16 @@ textSize(20);
     text(data1,75,160);
 
     data2 = weather.main.humidity;
-    text(data2,285,165)
+    text(data2,285,165);
 
     data3 = weather.wind.speed;
     text(data3,480,165);
 
     data4 = weather.clouds.all;
-    text(data4,260,330);
+    text(data4,260,375);
+
+//display the weather forecast description
+    text("Forecast: " + forecast,200,540);
 
 image(thermometer,65,200,thermometer.width/4,thermometer.height/7);
 
@@ -88,11 +97,10 @@ image(clouds,180,400,clouds.width/5,clouds.height/7);
 
     fill(182,182,182);
     //parse data for value sizes of rectangle{changes as the api updates}
-    rect (250,300,weather.clouds.all,weather.clouds.all);
-    text('clouds',250,270);
+    ellipse (273,310,weather.clouds.all,weather.clouds.all);
+    text('clouds',250,260);
 
-data5 = weather.description;
-text(data5,250,300);
+
 
 
   }
