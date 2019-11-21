@@ -6,7 +6,7 @@ var city = 'San Francisco';
 //apikey value from the json url
 var apiKey= '&appid=30fca972f2c59b104e617b40bc0c5702'
 var units = '&units=imperial';
-var data1,data2,data3;
+var data1,data2,data3,data4,data5;
 let thermometer,winds,clouds;
 
 
@@ -90,9 +90,11 @@ image(clouds,180,400,clouds.width/5,clouds.height/7);
     //parse data for value sizes of rectangle{changes as the api updates}
     rect (250,300,weather.clouds.all,weather.clouds.all);
     text('clouds',250,270);
-  //  fill (255);
-  //  text('humidity',200,100)
-  //  ellipse (300,100,weather.main.temp);
+
+data5 = weather.description;
+text(data5,250,300);
+
+
   }
 
 }
