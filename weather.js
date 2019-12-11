@@ -15,6 +15,7 @@ let sun;
 let moon;
 
 
+
 var input;
 function setup()
   {
@@ -151,6 +152,7 @@ image(clouds,180,400,clouds.width/5,clouds.height/7);
     //ellipse(x,y,50,50)
     y = y + random (-1,1);
     x = x -2;
+
     y2 = y2 + random (1,2);
     x2 = x2 -2;
 
