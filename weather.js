@@ -67,13 +67,13 @@ function draw()
   fill(0);
 text('ColormeWeather',225,20)
 textSize(20);
-image(sun,x,y,50,50)
-image(moon,x2,y2,50,50)
+//image(sun,x,y,50,50)
+//image(moon,x2,y2,50,50)
 //ellipse(x,y,50,50)
-y = y + random (-1,1);
-x = x -2;
-y2 = y2 + random (1,2);
-x2 = x2 -2;
+//y = y + random (-1,1);
+//x = x -2;
+//y2 = y2 + random (1,2);
+//x2 = x2 -2;
 if (x<0)
 {
   x=width;
@@ -146,7 +146,13 @@ image(clouds,180,400,clouds.width/5,clouds.height/7);
     text('clouds',250,260);
 
 
-
+    image(sun,x,y,50,50)
+    image(moon,x2,y2,50,50)
+    //ellipse(x,y,50,50)
+    y = y + random (-1,1);
+    x = x -2;
+    y2 = y2 + random (1,2);
+    x2 = x2 -2;
 
   }
 
